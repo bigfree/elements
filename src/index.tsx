@@ -5,14 +5,18 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { QueryClient, QueryClientProvider } from "react-query";
 import { ReactQueryDevtools } from "react-query/devtools";
+import { ThemeProvider } from "@mui/material";
+import theme from "./theme";
 
-const queryClient = new QueryClient()
+const queryClient = new QueryClient();
 
 ReactDOM.render(
     <QueryClientProvider client={queryClient}>
-        <React.StrictMode>
-            <App/>
-        </React.StrictMode>
+        <ThemeProvider theme={theme}>
+            <React.StrictMode>
+                <App/>
+            </React.StrictMode>
+        </ThemeProvider>
         <ReactQueryDevtools initialIsOpen={false}/>
     </QueryClientProvider>,
     document.getElementById('root')

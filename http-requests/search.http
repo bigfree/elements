@@ -1,0 +1,4 @@
+### GET request serach
+GET {{URI}}/search?q=luttrel&type=artist,album&limit=20
+Accept: application/json
+Authorization: {{AUTH}}

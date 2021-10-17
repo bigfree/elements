@@ -1,0 +1,4 @@
+### GET request artist detail info
+GET {{URI}}/artists/4EOyJnoiiOJ4vuNhSBArB2
+Accept: application/json
+Authorization: {{AUTH}}

@@ -1,0 +1,4 @@
+### GET Logged user info
+GET {{URI}}/me
+Accept: application/json
+Authorization: {{AUTH}}

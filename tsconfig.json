@@ -1,4 +1,7 @@
 {
+  "typeAcquisition": {
+    "enable": true
+  },
   "compilerOptions": {
     "target": "es5",
     "lib": [
@@ -18,7 +21,9 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react-jsx"
+    "jsx": "react-jsx",
+    "noImplicitThis": true,
+    "strictNullChecks": true
   },
   "include": [
     "src"
