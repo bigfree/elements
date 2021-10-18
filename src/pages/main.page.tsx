@@ -1,5 +1,6 @@
 import React, { FC } from "react";
 import { Box } from "@mui/material";
+import TopArtist from "../components/topArtist";
 
 /**
  * Main Page
@@ -10,12 +11,11 @@ const MainPage: FC = (): JSX.Element => {
     return (
         <Box
             sx={{
-                width: '100%',
-                height: 'auto',
-                flexBasis: 'auto'
+                flex: '1 1 auto',
+                flexDirection: 'row'
             }}
         >
-            page
+            <TopArtist/>
         </Box>
     )
 }

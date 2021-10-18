@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 import { useQuery } from "react-query";
-import fetchMe from "../client/me";
+import { fetchMe } from "../client/me";
 import { AppBar, Avatar, Box, Toolbar, Typography } from "@mui/material";
 import User from "./user";
 
@@ -28,10 +28,6 @@ const Header: FC = (): JSX.Element => {
                 </Toolbar>
             </AppBar>
         </Box>
-        // <header>
-        //     <img src={data?.images?.[0].url} alt={data?.display_name}/>
-        //     <p>{data?.display_name}</p>
-        // </header>
     )
 }
 

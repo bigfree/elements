@@ -31,14 +31,12 @@ const User: FC<UserComponentPropsType> = ({ data }: UserComponentPropsType): JSX
     };
 
     // Create MenuItem by user is logged
-    menuItems = [{
-        icon: <AccountCircleIcon fontSize={'small'}/>,
-        name: data?.display_name ?? '',
-        divider: true,
-    }];
-
-    menuItems = logged ? [
-        ...menuItems,
+     menuItems = logged ? [
+        {
+            icon: <AccountCircleIcon fontSize={'small'}/>,
+            name: data?.display_name ?? '',
+            divider: true,
+        },
         {
             icon: <LogoutIcon fontSize={'small'}/>,
             name: 'Logout',
@@ -48,7 +46,6 @@ const User: FC<UserComponentPropsType> = ({ data }: UserComponentPropsType): JSX
             name: 'Open in APP',
         }
     ] : [
-        ...menuItems,
         {
             icon: <LoginIcon fontSize={'small'}/>,
             name: 'Sign in',

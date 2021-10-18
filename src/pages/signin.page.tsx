@@ -15,6 +15,7 @@ const SignInPage: FC = (): JSX.Element => {
 
     useEffect(() => {
         history.push('/');
+        // Todo: fetch in background without reload
         window.location.reload();
     }, [isLogged, history]);
 

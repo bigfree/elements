@@ -57,7 +57,7 @@ export const computeLoginUrl = () => {
     // Set state to storage
     setStateToStorage(state);
 
-    window.location.href = `${REACT_APP_API_AUTHORIZE_URL}authorize?client_id=${REACT_APP_SPOTIFY_CLIENT_ID}&redirect_uri=${REACT_APP_SPOTIFY_REDIRECT}&response_type=${REACT_APP_SPOTIFY_RESPONSE_TYPE}&state=${state}&show_dialog=${REACT_APP_SPOTIFY_SHOW_DIALOG}`;
+    window.location.href = `${REACT_APP_API_AUTHORIZE_URL}authorize?client_id=${REACT_APP_SPOTIFY_CLIENT_ID}&redirect_uri=${REACT_APP_SPOTIFY_REDIRECT}&response_type=${REACT_APP_SPOTIFY_RESPONSE_TYPE}&state=${state}&scope=user-top-read&show_dialog=${REACT_APP_SPOTIFY_SHOW_DIALOG}`;
 }
 
 /**
