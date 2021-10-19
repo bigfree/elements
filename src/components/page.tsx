@@ -2,23 +2,21 @@ import React, { FC } from "react";
 import Header from "./header";
 import { Box } from "@mui/material";
 import MainPage from "../pages/main.page";
-import { Route, Router, Switch } from "react-router-dom";
+import { Route, Switch, useLocation } from "react-router-dom";
 import { RouteProps } from "react-router";
-import { createBrowserHistory } from 'history';
 import SignInPage from "../pages/signin.page";
-
-const history = createBrowserHistory();
 
 const routes: RouteProps[] = [
     {
-        path: '/',
-        component: MainPage,
+        path: '/signin',
+        component: SignInPage,
         exact: true
     },
     {
-        path: '/signin',
-        component: SignInPage,
-    }
+        path: '/',
+        component: MainPage,
+        exact: false,
+    },
 ];
 
 /**
@@ -27,27 +25,29 @@ const routes: RouteProps[] = [
  * @constructor
  */
 const Page: FC = (): JSX.Element => {
+    const location = useLocation();
     return (
         <React.Fragment>
             <Header/>
             <Box sx={{
                 display: 'flex',
-                flex: '1 1 100%',
+                flexGrow: 1,
+                flexDirection: 'row',
                 flexWrap: 'nowrap',
+                alignItems: 'stretch',
                 width: '100vw',
+                minHeight: '1px'
             }}>
-                <Router history={history}>
-                    <Switch>
-                        {routes.map((route: RouteProps, i: number) => (
-                            <Route
-                                key={i}
-                                component={route.component}
-                                path={route.path}
-                                exact={route.exact}
-                            />
-                        ))}
-                    </Switch>
-                </Router>
+                <Switch location={location}>
+                    {routes.map((route: RouteProps, i: number) => (
+                        <Route
+                            key={i}
+                            component={route.component}
+                            path={route.path}
+                            exact={route.exact}
+                        />
+                    ))}
+                </Switch>
             </Box>
         </React.Fragment>
     )

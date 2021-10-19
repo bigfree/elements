@@ -7,18 +7,21 @@ import { QueryClient, QueryClientProvider } from "react-query";
 import { ReactQueryDevtools } from "react-query/devtools";
 import { ThemeProvider } from "@mui/material";
 import theme from "./theme";
+import { BrowserRouter } from "react-router-dom";
 
 const queryClient = new QueryClient();
 
 ReactDOM.render(
-    <QueryClientProvider client={queryClient}>
-        <ThemeProvider theme={theme}>
-            <React.StrictMode>
-                <App/>
-            </React.StrictMode>
-        </ThemeProvider>
-        <ReactQueryDevtools initialIsOpen={false}/>
-    </QueryClientProvider>,
+    <BrowserRouter>
+        <QueryClientProvider client={queryClient}>
+            <ThemeProvider theme={theme}>
+                <React.StrictMode>
+                    <App/>
+                </React.StrictMode>
+            </ThemeProvider>
+            <ReactQueryDevtools initialIsOpen={false}/>
+        </QueryClientProvider>
+    </BrowserRouter>,
     document.getElementById('root')
 );
 
