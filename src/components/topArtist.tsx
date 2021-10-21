@@ -14,8 +14,6 @@ const TopArtist: FC = (): JSX.Element => {
         retry: false
     });
 
-    console.log(data);
-
     return (
         <Box sx={{
             flex: '1 1 100%',

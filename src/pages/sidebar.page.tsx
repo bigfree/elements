@@ -1,6 +1,7 @@
 import { FC } from "react";
 import { RouteComponentProps } from "react-router-dom";
 import { Box } from "@mui/material";
+import Artist from "../components/artist";
 
 type TRouteParams = {
     type: string;
@@ -18,20 +19,22 @@ type TProps = {
  * @constructor
  */
 const SidebarPage: FC<TProps> = ({ routeProps }: TProps): JSX.Element => {
-    console.log(routeProps);
     return (
         <Box
             sx={{
                 flexGrow: 0,
-                flexBasis: '550px',
-                width: '550px',
+                flexBasis: 820,
                 alignItems: 'stretch',
                 display: 'flex',
+                flexDirection: 'column',
+                flexWrap: 'nowrap',
                 borderLeft: 1,
                 borderColor: 'grey.900',
-                ml: 2
+                ml: 2,
             }}
-        >test</Box>
+        >
+            <Artist routeProps={routeProps}/>
+        </Box>
     )
 }
 export default SidebarPage

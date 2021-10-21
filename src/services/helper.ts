@@ -16,3 +16,13 @@ export const convertUrlParamsToObject = (url: string): userTokenParams => {
     }
     return params;
 };
+
+/**
+ * Convert ms to minutes
+ * @param {number} ms
+ * @returns {string}
+ */
+export const convertMsToMinutes = (ms: number): string => {
+    const date = new Date(ms);
+    return `${date.getMinutes()}:${date.getSeconds()}` as string;
+}
